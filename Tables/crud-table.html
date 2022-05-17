@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        h2{
+            text-align: center;
+        }
+        table,
+        td,
+        th {
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 15px;
+        }
+        #create{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Table of the products</h2>
+
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Shirt</td>
+            <td>$20</td>
+            <td>23</td>
+            <td><button>Edit</button><button>Delete</button></td>
+        </tr>
+        <tr>
+            <td>Shoes</td>
+            <td>$30</td>
+            <td>30</td>
+            <td><button>Edit</button><button>Delete</button></td>
+        </tr>
+        <tr>
+            <td>Dress</td>
+            <td>$50</td>
+            <td>15</td>
+            <td><button>Edit</button><button>Delete</button></td>
+        </tr>
+        <tr>
+            <td colspan="4" id="create"><button>Create new product</button></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
