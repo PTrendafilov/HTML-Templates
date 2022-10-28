@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<!--
+Template Name: Gleblu
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="bg">
+
+<head>
+    <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link data-default-icon="img/logo.png" data-badged-icon="img/logo.png" rel="shortcut icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/start_menu.css">
+    <title>Оцветяване</title>
+    <style>
+        .left-block {
+            background-color: white;
+        }
+        
+        .white {
+            background-color: white!important;
+        }
+        
+        img {
+            width: 75px;
+        }
+        
+        .wrapper {
+            background-image: url(img/guille-pozzi-sbcIAn4Mn14-unsplash.jpg);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        main {
+            width: 800px;
+            border: 1px solid #e0e0e0;
+            margin: 0 auto;
+            display: flex;
+            flex-grow: 1;
+        }
+        
+        .left-block {
+            width: 160px;
+            border-right: 1px solid #e0e0e0;
+        }
+        
+        .colors {
+            background-color: #ece8e8;
+            text-align: center;
+            padding-bottom: 5px;
+            padding-top: 10px;
+        }
+        
+        .colors button {
+            display: inline-block;
+            border: 1px solid #00000026;
+            border-radius: 0;
+            outline: none;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            margin-bottom: 5px
+        }
+        
+        .colors button:nth-of-type(1) {
+            background-color: #0000ff;
+        }
+        
+        .colors button:nth-of-type(2) {
+            background-color: #009fff;
+        }
+        
+        .colors button:nth-of-type(3) {
+            background-color: #0fffff;
+        }
+        
+        .colors button:nth-of-type(4) {
+            background-color: #bfffff;
+        }
+        
+        .colors button:nth-of-type(5) {
+            background-color: #000000;
+        }
+        
+        .colors button:nth-of-type(6) {
+            background-color: #333333;
+        }
+        
+        .colors button:nth-of-type(7) {
+            background-color: #666666;
+        }
+        
+        .colors button:nth-of-type(8) {
+            background-color: #999999;
+        }
+        
+        .colors button:nth-of-type(9) {
+            background-color: #ffcc66;
+        }
+        
+        .colors button:nth-of-type(10) {
+            background-color: #ffcc00;
+        }
+        
+        .colors button:nth-of-type(11) {
+            background-color: #ffff00;
+        }
+        
+        .colors button:nth-of-type(12) {
+            background-color: #ffff99;
+        }
+        
+        .colors button:nth-of-type(13) {
+            background-color: #003300;
+        }
+        
+        .colors button:nth-of-type(14) {
+            background-color: #555000;
+        }
+        
+        .colors button:nth-of-type(15) {
+            background-color: #00ff00;
+        }
+        
+        .colors button:nth-of-type(16) {
+            background-color: #99ff99;
+        }
+        
+        .colors button:nth-of-type(17) {
+            background-color: #f00000;
+        }
+        
+        .colors button:nth-of-type(18) {
+            background-color: #ff6600;
+        }
+        
+        .colors button:nth-of-type(19) {
+            background-color: #ff9933;
+        }
+        
+        .colors button:nth-of-type(20) {
+            background-color: #f5deb3;
+        }
+        
+        .colors button:nth-of-type(21) {
+            background-color: #330000;
+        }
+        
+        .colors button:nth-of-type(22) {
+            background-color: #663300;
+        }
+        
+        .colors button:nth-of-type(23) {
+            background-color: #cc6600;
+        }
+        
+        .colors button:nth-of-type(24) {
+            background-color: #deb887;
+        }
+        
+        .colors button:nth-of-type(25) {
+            background-color: #aa0fff;
+        }
+        
+        .colors button:nth-of-type(26) {
+            background-color: #cc66cc;
+        }
+        
+        .colors button:nth-of-type(27) {
+            background-color: #ff66ff;
+        }
+        
+        .colors button:nth-of-type(28) {
+            background-color: #ff99ff;
+        }
+        
+        .colors button:nth-of-type(29) {
+            background-color: #e8c4e8;
+        }
+        
+        .colors button:nth-of-type(30) {
+            background-color: #ffffff;
+        }
+        
+        .brushes {
+            background-color: purple;
+            padding-top: 5px
+        }
+        
+        .brushes button {
+            display: block;
+            width: 100%;
+            border: 0;
+            border-radius: 0;
+            background-color: #ece8e8;
+            margin-bottom: 5px;
+            padding: 5px;
+            height: 30px;
+            outline: none;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .brushes button:after {
+            height: 1px;
+            display: block;
+            background: #808080;
+            content: '';
+        }
+        
+        .brushes button:nth-of-type(1):after {
+            height: 1px;
+        }
+        
+        .brushes button:nth-of-type(2):after {
+            height: 2px;
+        }
+        
+        .brushes button:nth-of-type(3):after {
+            height: 3px;
+        }
+        
+        .brushes button:nth-of-type(4):after {
+            height: 4px;
+        }
+        
+        .brushes button:nth-of-type(5):after {
+            height: 5px;
+        }
+        
+        .buttons {
+            height: 80px;
+            padding-top: 10px;
+        }
+        
+        .buttons button {
+            display: block;
+            width: 100%;
+            border: 0;
+            border-radius: 0;
+            background-color: #ece8e8;
+            margin-bottom: 5px;
+            padding: 5px;
+            height: 30px;
+            outline: none;
+            position: relative;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .right-block {
+            width: 640px;
+        }
+        
+        #paint-canvas {
+            cursor: crosshair;
+        }
+        
+        .hide {
+            display: none!important;
+        }
+        
+        main {
+            margin-top: 100px!important;
+        }
+        
+        *,
+        *::before,
+        *::after {
+            transition: all .0s ease-in-out!important;
+        }
+        
+        header img {
+            display: inline-block;
+            width: 65px;
+            margin-right: 20px!important;
+            margin-top: -8px!important;
+        }
+    </style>
+</head>
+
+<body id="top">
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="wrapper row0">
+
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <div class="wrapper row1">
+            <header id="header" class="hoc clear">
+                <div id="logo" class="fl_left">
+
+                    <!-- ################################################################################################ -->
+                    <h1><img src="img/logo.png" alt="" width=""><a href="index.html">Космосът</a></h1>
+                    <!-- ################################################################################################ -->
+                </div>
+                <nav id="mainav" class="fl_right">
+                    <!-- ################################################################################################ -->
+                    <ul class="clear">
+                        <li>
+                            <a href="index.html">Начална страница</a>
+                        </li>
+                        <li><a class="drop" href="Solar system.html">Слънчева система</a>
+                            <ul>
+                                <li><a href="Mercury.html">Меркурий</a></li>
+                                <li><a href="Venus.html">Венера</a></li>
+                                <li><a href="Earth.html">Земята</a></li>
+                                <li>
+                                    <a href="Moon.html">Луната</a>
+                                </li>
+                                <li><a href="Mars.html">Марс</a></li>
+                                <li><a href="Upiter.html">Юпитер</a></li>
+                                <li><a href="Saturn.html">Сатурн</a></li>
+                                <li><a href="Uran.html">Уран</a></li>
+                                <li><a href="Neptun.html">Нептун</a></li>
+                                <li><a href="Pluton.html">Плутон</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="drop" href="Solar_Questions.html">Тестове</a>
+                            <ul>
+                                <li><a href="Solar_Questions.html">Слънчевата система</a></li>
+                                <li><a href="Earth_Questions.html">Земята</a></li>
+                                <li><a href="Moon_Questions.html">Луната</a></li>
+                                <li><a href="Mercury_Questions.html">Меркурий</a>
+                                </li>
+                                <li><a href="Venus_Questions.html">Венера</a></li>
+                                <li><a href="Mars_Questions.html">Марс</a></li>
+                                <li>
+                                    <a href="Upiter_Questions.html">Юпитер</a>
+                                </li>
+                                <li><a href="Saturn_Questions.html">Сатурн</a></li>
+                                <li><a href="Uran_Questions.html">Уран</a></li>
+                                <li><a href="Neptun_Questions.html">Нептун</a>
+                                </li>
+                                <li><a href="Pluton_Questions.html">Плутон</a></li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a class="drop" href="puzzle12.html">Игри</a>
+                            <ul>
+
+                                <li>
+                                    <a href="puzzle12.html">Пъзел</a>
+                                </li>
+
+                                <li>
+                                    <a href="memory.html">Мемори</a>
+                                </li>
+                                <li><a href="Painting.html" class="drop">Оцветяване</a>
+                                    <ul>
+                                        <li>
+                                            <a href="Solar_Painting.html">Слънчевата система</a>
+                                        </li>
+                                        <li>
+                                            <a href="Painting.html">Земята</a>
+                                        </li>
+                                        <li>
+                                            <a href="Moon_Painting.html">Луната</a>
+                                        </li>
+                                        <li>
+                                            <a href="Mercury_Painting.html">Меркурий</a>
+                                        </li>
+                                        <li>
+                                            <a href="Mars_Painting.html">Марс</a>
+                                        </li>
+                                        <li>
+                                            <a href="Jupiter_Painting.html">Юпитер</a>
+                                        </li>
+                                        <li>
+                                            <a href="Saturn_Painting.html">Сатурн</a>
+                                        </li>
+                                        <li>
+                                            <a href="Uran_Painting.html">Уран</a>
+                                        </li>
+                                        <li>
+                                            <a href="Neptune_Painting.html">Нептун</a>
+                                        </li>
+                                        <li>
+                                            <a href="Pluton_Painting.html">Плутон</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <!-- ################################################################################################ -->
+                </nav>
+            </header>
+        </div>
+        <main>
+            <div class="left-block">
+                <div class="colors">
+                    <button type="button" value="#0000ff"></button>
+                    <button type="button" value="#009fff"></button>
+                    <button type="button" value="#0fffff"></button>
+                    <button type="button" value="#bfffff"></button>
+                    <button type="button" value="#000000"></button>
+                    <button type="button" value="#333333"></button>
+                    <button type="button" value="#666666"></button>
+                    <button type="button" value="#999999"></button>
+                    <button type="button" value="#ffcc66"></button>
+                    <button type="button" value="#ffcc00"></button>
+                    <button type="button" value="#ffff00"></button>
+                    <button type="button" value="#ffff99"></button>
+                    <button type="button" value="#003300"></button>
+                    <button type="button" value="#555000"></button>
+                    <button type="button" value="#00ff00"></button>
+                    <button type="button" value="#99ff99"></button>
+                    <button type="button" value="#f00000"></button>
+                    <button type="button" value="#ff6600"></button>
+                    <button type="button" value="#ff9933"></button>
+                    <button type="button" value="#f5deb3"></button>
+                    <button type="button" value="#330000"></button>
+                    <button type="button" value="#663300"></button>
+                    <button type="button" value="#cc6600"></button>
+                    <button type="button" value="#deb887"></button>
+                    <button type="button" value="#aa0fff"></button>
+                    <button type="button" value="#cc66cc"></button>
+                    <button type="button" value="#ff66ff"></button>
+                    <button type="button" value="#ff99ff"></button>
+                    <button type="button" value="#e8c4e8"></button>
+                    <button type="button" value="#ffffff"></button>
+                </div>
+                <div class="brushes">
+                    <button type="button" value="1"></button>
+                    <button type="button" value="2"></button>
+                    <button type="button" value="3"></button>
+                    <button type="button" value="4"></button>
+                    <button type="button" value="5"></button>
+                </div>
+                <div class="buttons">
+                    <button id="clear" type="button">Clear</button>
+
+                </div>
+            </div>
+            <div class="right-block"><img id="scream" width="0" height="00" src="img/Saturn_Paint.png" alt="The Scream" style="width: 0;">
+
+
+                <canvas id="paint-canvas" width="640" height="400" style="border:1px solid #d3d3d3;background-color: white;">
+            Your browser does not support the HTML5 canvas tag.
+            </canvas></div>
+        </main><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="wrapper row5">
+            <div id="copyright" class="hoc clear">
+                <!-- ################################################################################################ -->
+                <p class="fl_left">Copyright &copy; 2021 - All Rights Reserved</p>
+                <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+                <!-- ################################################################################################ -->
+            </div>
+        </div>
+</body>
+<script>
+    window.onload = function() {
+
+            // Definitions     
+
+
+
+            var canvas = document.getElementById("paint-canvas");
+            var context = canvas.getContext("2d");
+            var boundings = canvas.getBoundingClientRect();
+            var img = document.getElementById("scream");
+            context.drawImage(img, 10, 10);
+            // Specifications
+            var mouseX = 0;
+            var mouseY = 0;
+            context.strokeStyle = 'black'; // initial brush color
+            context.lineWidth = 1; // initial brush width
+            var isDrawing = false;
+
+
+            // Handle Colors
+            var colors = document.getElementsByClassName('colors')[0];
+
+            colors.addEventListener('click', function(event) {
+                context.strokeStyle = event.target.value || 'black';
+            });
+
+            // Handle Brushes
+            var brushes = document.getElementsByClassName('brushes')[0];
+
+            brushes.addEventListener('click', function(event) {
+                context.lineWidth = event.target.value || 1;
+            });
+
+            // Mouse Down Event
+            canvas.addEventListener('mousedown', function(event) {
+                setMouseCoordinates(event);
+                isDrawing = true;
+
+                // Start Drawing
+                context.beginPath();
+                context.moveTo(mouseX, mouseY);
+            });
+
+            // Mouse Move Event
+            canvas.addEventListener('mousemove', function(event) {
+                setMouseCoordinates(event);
+
+                if (isDrawing) {
+                    context.lineTo(mouseX, mouseY);
+                    context.stroke();
+                }
+            });
+
+            // Mouse Up Event
+            canvas.addEventListener('mouseup', function(event) {
+                setMouseCoordinates(event);
+                isDrawing = false;
+            });
+
+            // Handle Mouse Coordinates
+            function setMouseCoordinates(event) {
+                mouseX = event.clientX - boundings.left;
+                mouseY = event.clientY - boundings.top;
+            }
+
+            // Handle Clear Button
+            var clearButton = document.getElementById('clear');
+
+            clearButton.addEventListener('click', function() {
+                window.location.reload();
+            });
+        }
+        // Handle Save Button
+</script>
+
+</html>

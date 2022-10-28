@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<!--
+Template Name: Gleblu
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="bg">
+
+<head>
+    <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link data-default-icon="img/logo.png" data-badged-icon="img/logo.png" rel="shortcut icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/start_menu.css">
+    <title>Мемори игра</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-image: url(img/guille-pozzi-sbcIAn4Mn14-unsplash.jpg);
+        }
+        /* HEADER */
+        /* main SECTION */
+        
+        .main1 {
+            background: white;
+            width: 250px;
+            height: 345px;
+            /* box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.4); */
+            margin: auto;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        @media only screen and (min-width: 768px) {
+            .main1 {
+                width: 310px;
+                height: 285px;
+            }
+        }
+        
+        @media only screen and (min-width: 1024px) {
+            .main1 {
+                width: 410px;
+                height: 375px;
+            }
+        }
+        
+        .box {
+            background: #6186aa;
+            /* background-image: linear-gradient(to top left, #9b59b6, #1abc9c); */
+            background-size: 250%;
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin: 10px 0 0 10px;
+        }
+        
+        @media only screen and (min-width: 1024px) {
+            .box {
+                width: 70px;
+                height: 70px;
+            }
+        }
+        
+        .play:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
+        
+        img {
+            width: 100%;
+            display: block;
+        }
+        /* STATUS bar */
+        
+        #state {
+            background: #6186aa;
+            /* background-image: linear-gradient(to top left, #9b59b6, #1abc9c);
+        */
+            background-size: 250%;
+            width: 230px;
+            line-height: 25px;
+            float: left;
+            margin: 10px 0 0 10px;
+            padding: 0 10px;
+            color: white;
+            font-size: 16px;
+        }
+        
+        @media only screen and (min-width: 768px) {
+            #state {
+                width: 290px;
+            }
+        }
+        
+        @media only screen and (min-width: 1024px) {
+            #state {
+                width: 390px;
+                line-height: 35px;
+            }
+        }
+        
+        #time {
+            float: left;
+        }
+        
+        #time::after {
+            content: " sec";
+        }
+        
+        #score {
+            float: right;
+        }
+        
+        #score::after {
+            content: " points";
+        }
+        /* FOOTER */
+        
+        footer p {
+            color: white;
+            padding: 5px;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        
+        footer p a {
+            color: #ddd;
+            text-decoration: none;
+        }
+        
+        footer p a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        .show {
+            display: block;
+        }
+        
+        .outlined {
+            outline: solid 2px #34495e;
+            background: #9b59b6;
+        }
+        /* PRE modal window */
+        
+        #pre {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        
+        #themes {
+            margin: auto;
+            padding: 20px;
+            width: 250px;
+            background: white;
+            color: #6186aa;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+        
+        #themes p {
+            margin-top: 10px;
+            padding: 5px 20px;
+            border: solid 1px;
+            background: white;
+            color: #6186aa;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        #themes p:hover {
+            background: #6186aa;
+            /* background-image: linear-gradient(to top left, #9b59b6, #1abc9c); */
+            background-size: 250%;
+            color: white;
+        }
+        /* POST modal window */
+        
+        #post {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+        }
+        
+        #post>div {
+            width: 300px;
+            padding: 20px 0 40px;
+            background: white;
+            color: #6186aa;
+        }
+        
+        #post p:first-child,
+        #post #final {
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin: auto;
+            padding: 10px 20px;
+        }
+        
+        #post #again {
+            color: #6186aa;
+            text-decoration: none;
+            margin: auto;
+            padding: 10px 20px;
+            width: 160px;
+            border: solid 1px;
+        }
+        
+        #post #again:hover {
+            background: #6186aa;
+            /* background-image: linear-gradient(to top left, #9b59b6, #1abc9c); */
+            background-size: 250%;
+            color: white;
+            cursor: pointer;
+        }
+        
+        #Exit {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            font-size: 40px;
+            padding: 20px;
+            margin-top: -8px;
+        }
+        
+        #Exit:hover {
+            background-color: #A60009;
+        }
+        
+        *,
+        *::before,
+        *::after {
+            transition: none;
+        }
+        
+        header img {
+            display: inline-block;
+            width: 65px;
+            margin-right: 20px!important;
+            margin-top: -8px!important;
+        }
+        
+        .wrapper {
+            background-image: url(img/guille-pozzi-sbcIAn4Mn14-unsplash.jpg);
+        }
+        
+        #again {
+            margin-left: 75px!important;
+        }
+    </style>
+</head>
+
+<body id="top">
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="wrapper row0">
+
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <div class="wrapper row1">
+            <header id="header" class="hoc clear">
+                <div id="logo" class="fl_left">
+
+                    <!-- ################################################################################################ -->
+                    <h1><img src="img/logo.png" alt="" width=""><a href="index.html">Космосът</a></h1>
+                    <!-- ################################################################################################ -->
+                </div>
+                <nav id="mainav" class="fl_right">
+                    <!-- ################################################################################################ -->
+                    <ul class="clear">
+                        <li>
+                            <a href="index.html">Начална страница</a>
+                        </li>
+                        <li><a class="drop" href="Solar system.html">Слънчева система</a>
+                            <ul>
+                                <li><a href="Mercury.html">Меркурий</a></li>
+                                <li><a href="Venus.html">Венера</a></li>
+                                <li><a href="Earth.html">Земята</a></li>
+                                <li>
+                                    <a href="Moon.html">Луната</a>
+                                </li>
+                                <li><a href="Mars.html">Марс</a></li>
+                                <li><a href="Upiter.html">Юпитер</a></li>
+                                <li><a href="Saturn.html">Сатурн</a></li>
+                                <li><a href="Uran.html">Уран</a></li>
+                                <li><a href="Neptun.html">Нептун</a></li>
+                                <li><a href="Pluton.html">Плутон</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="drop" href="Solar_Questions.html">Тестове</a>
+                            <ul>
+                                <li><a href="Solar_Questions.html">Слънчевата система</a></li>
+                                <li><a href="Earth_Questions.html">Земята</a></li>
+                                <li><a href="Moon_Questions.html">Луната</a></li>
+                                <li><a href="Mercury_Questions.html">Меркурий</a>
+                                </li>
+                                <li><a href="Venus_Questions.html">Венера</a></li>
+                                <li><a href="Mars_Questions.html">Марс</a></li>
+                                <li>
+                                    <a href="Upiter_Questions.html">Юпитер</a>
+                                </li>
+                                <li><a href="Saturn_Questions.html">Сатурн</a></li>
+                                <li><a href="Uran_Questions.html">Уран</a></li>
+                                <li><a href="Neptun_Questions.html">Нептун</a>
+                                </li>
+                                <li><a href="Pluton_Questions.html">Плутон</a></li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a class="drop" href="puzzle12.html">Игри</a>
+                            <ul>
+
+                                <li>
+                                    <a href="puzzle12.html">Пъзел</a>
+                                </li>
+
+                                <li>
+                                    <a href="memory.html">Мемори</a>
+                                </li>
+                                <li><a href="Painting.html" class="drop">Оцветяване</a>
+                                    <ul>
+                                        <li>
+                                            <a href="Solar_Painting.html">Слънчевата система</a>
+                                        </li>
+                                        <li>
+                                            <a href="Painting.html">Земята</a>
+                                        </li>
+                                        <li>
+                                            <a href="Venus_Painting.html">Венера</a>
+                                        </li>
+                                        <li>
+                                            <a href="Mercury_Painting.html">Меркурий</a>
+                                        </li>
+                                        <li>
+                                            <a href="Mars_Painting.html">Марс</a>
+                                        </li>
+                                        <li>
+                                            <a href="Jupiter_Painting.html">Юпитер</a>
+                                        </li>
+                                        <li>
+                                            <a href="Saturn_Painting.html">Сатурн</a>
+                                        </li>
+                                        <li>
+                                            <a href="Uran_Painting.html">Уран</a>
+                                        </li>
+                                        <li>
+                                            <a href="Neptune_Painting.html">Нептун</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <!-- ################################################################################################ -->
+                </nav>
+            </header>
+        </div>
+
+        <br><br><br><br><br>
+        <section class="main1">
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+            <div class="box play"></div>
+
+            <div id="state">
+                <span id="time">0</span>
+                <span id="score">0</span>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section id="pre" class="">
+            <div id="themes">
+                Избери си тема
+                <p id="planets" class="themes" title="Planets">Планети</p>
+
+            </div>
+        </section>
+
+
+        <section id="post" class="hidden">
+            <div>
+                <p>Браво!</p>
+                <p id="final"></p>
+                <br>
+                <p>
+                    <a id="again">Играй отново!</a>
+                </p>
+            </div>
+        </section>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="wrapper row5">
+            <div id="copyright" class="hoc clear">
+                <!-- ################################################################################################ -->
+                <p class="fl_left">Copyright &copy; 2021 - All Rights Reserved <br>Memory game is created by <a href="https://remybeumier.be" target="_blank">Rémy Beumier</a></p>
+                <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+                <!-- ################################################################################################ -->
+            </div>
+        </div>
+        <script src="layout/scripts/jquery.min.js">
+        </script>
+        <script src="layout/scripts/jquery.backtotop.js"></script>
+        <script src="layout/scripts/jquery.mobilemenu.js"></script>
+        <script>
+            // other themes to add ?
+            // bigger memory?
+
+            var library = {
+                planets: [
+                    'img/Saturn_Memory.jpg',
+                    'img/Mercury_Memory.jpg',
+                    'img/Venus_Memory.jpg',
+                    'img/Jupiter_Memory.jpg',
+                    'img/Mars_Memory.jpg',
+                    'img/Neptun_Memory.jpg',
+                    'img/Earth.Memory.jpg',
+                    'img/Uran_Memory.jpg',
+                    'img/Rocket_Memory.jpg',
+                    'img/Mers_Memory.jpg',
+                    'img/Saturn_Memory.jpg',
+                    'img/Mercury_Memory.jpg',
+                    'img/Venus_Memory.jpg',
+                    'img/Jupiter_Memory.jpg',
+                    'img/Mars_Memory.jpg',
+                    'img/Neptun_Memory.jpg',
+                    'img/Earth.Memory.jpg',
+                    'img/Uran_Memory.jpg',
+                    'img/Rocket_Memory.jpg',
+                    'img/Mers_Memory.jpg',
+                    'img/Saturn_Memory.jpg',
+                    'img/Mercury_Memory.jpg'
+                ]
+            }
+
+            var images = [],
+                tempElt1 = "",
+                tempElt2 = "",
+                click = -1,
+                win = 0,
+                score = 0,
+                time = 0;
+
+            var preElt = document.querySelector("#pre"),
+                themesElt = document.querySelector("#themes"),
+                boxElts = document.getElementsByClassName("box"),
+                mainElt = document.querySelector(".main1"),
+                timeElt = document.querySelector("#time"),
+                scoreElt = document.querySelector("#score"),
+                postElt = document.querySelector("#post"),
+                finalElt = document.querySelector("#final"),
+                againElt = document.querySelector("#again");
+
+
+            // initiate the game with chosen theme
+            themesElt.addEventListener("click", function(e) {
+                if (e.target.classList.contains("themes")) {
+                    activateTheme(e.target.id);
+                    preElt.classList.add("hidden");
+                }
+            });
+
+            function activateTheme(theme) {
+                // insert theme in images array
+                switch (theme) {
+                    case "planets":
+                        for (let i = 0; i < 20; i++) {
+                            images.push(library.planets[i]);
+                        }
+                        break;
+                    case "starwars":
+                        for (let i = 0; i < 20; i++) {
+                            images.push(library.starwars[i]);
+                        }
+                        break;
+                    case "lotr":
+                        for (let i = 0; i < 20; i++) {
+                            images.push(library.lotr[i]);
+                        }
+                        break;
+                    case "disney":
+                        for (let i = 0; i < 20; i++) {
+                            images.push(library.disney[i]);
+                        }
+                        break;
+                    case "pixar":
+                        for (let i = 0; i < 20; i++) {
+                            images.push(library.pixar[i]);
+                        }
+                        break;
+                    case "harrypotter":
+                        for (let i = 0; i < 20; i++) {
+                            images.push(library.harrypotter[i]);
+                        }
+                        break;
+                }
+                // insert images in memory game
+                for (let i = 0; i < 20; i++) {
+                    var rand = Math.floor(Math.random() * (images.length - 1));
+                    boxElts[i].innerHTML = "<img src='" + images[rand] + "' alt='image' class='hidden'>";
+                    images.splice(rand, 1);
+                }
+            }
+
+
+            // Handle the play
+            mainElt.addEventListener("click", gameLogic);
+
+            function gameLogic(e) {
+                // make sure the box is playable
+                if (e.target.classList.contains("play")) {
+                    e.target.firstChild.classList.remove("hidden");
+                    // first of two click
+                    if (click < 1) {
+                        tempElt1 = e.target;
+                        // timer
+                        if (click === -1) {
+                            timer = setInterval(function() {
+                                time++;
+                                timeElt.innerHTML = time;
+                            }, 1000);
+                        }
+                        click = 1;
+                    }
+
+                    // second click
+                    else if (e.target !== tempElt1) {
+                        tempElt2 = e.target;
+
+                        // different images
+                        if (tempElt1.firstChild.src !== tempElt2.firstChild.src) {
+                            mainElt.removeEventListener("click", gameLogic);
+                            setTimeout(function() {
+                                tempElt1.firstChild.classList.add("hidden");
+                                tempElt2.firstChild.classList.add("hidden");
+                                mainElt.addEventListener("click", gameLogic);
+                            }, 400);
+                            if (score > 0) {
+                                score -= 2;
+                            }
+                            scoreElt.innerHTML = score;
+                        }
+
+                        // same images
+                        else {
+                            score += 10;
+                            win += 2;
+                            tempElt1.firstChild.classList.add("outlined");
+                            tempElt2.firstChild.classList.add("outlined");
+                            tempElt1.classList.remove("play");
+                            tempElt2.classList.remove("play");
+                            scoreElt.innerHTML = score;
+
+                            // game won
+                            if (win === 20) {
+                                clearTimeout(timer);
+                                finalElt.innerHTML = "Ти печелиш! " + score + " Точки <br> за " + time + " секунди";
+                                postElt.classList.remove("hidden");
+                            }
+                        }
+                        click = 0;
+                    }
+                }
+            }
+
+            againElt.addEventListener("click", resetGame);
+
+            function resetGame() {
+                // reset game
+                tempElt1 = "";
+                tempElt2 = "";
+                click = -1;
+                win = 0;
+                score = 0;
+                time = 0;
+                postElt.classList.add("hidden");
+                preElt.classList.remove("hidden");
+                for (let i = 0; i < 20; i++) {
+                    boxElts[i].classList.add("play");
+                    boxElts[i].firstChild.classList.add("hidden");
+                }
+                timeElt.textContent = time;
+                scoreElt.textContent = score;
+            }
+        </script>
+
+</html>
