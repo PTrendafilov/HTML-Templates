@@ -1,0 +1,52 @@
+header img {
+    width: 65px;
+    margin-right: 20px;
+    display: inline-block;
+    margin-top: -8px;
+}
+
+.wrapper {
+    background-image: url(img/guille-pozzi-sbcIAn4Mn14-unsplash.jpg);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+body {
+    font-family: 'Raleway', sans-serif!important;
+}
+
+#mainav .active a,
+#mainav a:hover,
+#mainav li:hover>a,
+#mainav li li a,
+#mainav .active li a {
+    color: black!important;
+    background-color: rgb(255, 255, 31)!important;
+    border-bottom: 1px solid white!important;
+}
+
+#mainav .active a,
+#mainav a:hover,
+#mainav li:hover>a,
+#mainav li li a:hover,
+#mainav .active li a:hover {
+    background-color: rgb(255, 255, 31)!important;
+    border-bottom: 1px solid black!important;
+}
+
+.right-block {
+    border: none;
+    background-color: white;
+}
+
+canvas {
+    border: none!important;
+}
+
+.row1 {
+    background-image: url(img/guille-pozzi-sbcIAn4Mn14-unsplash.jpg)!important;
+    background-color: black;
+}
+
+.box img {
+    margin-top: 0px!important;
+}
